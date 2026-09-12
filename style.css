@@ -697,6 +697,162 @@ button {
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
+.extra-message-wrap {
+    margin-top: 28px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.extra-message-wrap.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#extraMessageBtn {
+    padding: 12px 20px;
+    border-radius: 999px;
+    border: 1px solid rgba(216, 180, 254, 0.4);
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.9), rgba(192, 132, 252, 0.76));
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.35);
+}
+
+#extraMessageBtn:hover,
+#extraMessageBtn:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 0 26px rgba(196, 120, 255, 0.7);
+}
+
+.extra-message-hidden {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin-top: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease, margin-top 0.5s ease;
+}
+
+.extra-message-hidden.visible {
+    max-height: 220px;
+    opacity: 1;
+    margin-top: 18px;
+}
+
+.extra-message-hidden p {
+    padding: 18px 16px;
+    border-radius: 18px;
+    background: rgba(92, 52, 128, 0.2);
+    border: 1px solid rgba(216, 180, 254, 0.25);
+    color: #f0d9ff;
+    line-height: 1.8;
+    font-size: 14px;
+    text-align: left;
+}
+
+.passcode-modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(9, 5, 15, 0.7);
+    backdrop-filter: blur(8px);
+    z-index: 40;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.passcode-modal.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.passcode-panel {
+    position: relative;
+    width: min(92%, 380px);
+    padding: 28px 22px 24px;
+    background: linear-gradient(145deg, rgba(28, 14, 42, 0.98), rgba(9, 5, 16, 0.98));
+    border: 1px solid rgba(216, 180, 254, 0.35);
+    border-radius: 22px;
+    box-shadow: 0 0 35px rgba(168, 85, 247, 0.28);
+    text-align: center;
+}
+
+.close-passcode {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid rgba(216, 180, 254, 0.25);
+    background: rgba(255, 255, 255, 0.04);
+    color: #f3e8ff;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.passcode-kicker {
+    color: #d8b4fe;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.passcode-panel h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 8vw, 38px);
+    color: #f7ecff;
+    margin-bottom: 18px;
+}
+
+#passcodeInput {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+    border-radius: 14px;
+    border: 1px solid rgba(192, 132, 252, 0.45);
+    background: rgba(8, 5, 14, 0.8);
+    color: #f5ecff;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-align: center;
+    outline: none;
+}
+
+#passcodeInput:focus {
+    border-color: #d8b4fe;
+    box-shadow: 0 0 18px rgba(192, 132, 252, 0.3);
+}
+
+#submitPasscode {
+    width: 100%;
+    padding: 12px 18px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #8b5cf6, #c084fc);
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+#submitPasscode:hover,
+#submitPasscode:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 0 26px rgba(196, 120, 255, 0.6);
+}
+
+.passcode-error {
+    min-height: 18px;
+    margin-top: 12px;
+    color: #f0abfc;
+    font-size: 13px;
+}
+
 /* =========================
    PARTICLES
 ========================= */
