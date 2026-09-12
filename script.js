@@ -18,9 +18,18 @@ const codeInput = document.getElementById("codeInput");
 const codeError = document.getElementById("codeError");
 const letterText = document.getElementById("letterText");
 const signature = document.querySelector(".signature");
+const extraMessageWrap = document.getElementById("extraMessageWrap");
+const extraMessageBtn = document.getElementById("extraMessageBtn");
+const extraMessageReveal = document.getElementById("extraMessageReveal");
+const passcodeModal = document.getElementById("passcodeModal");
+const closePasscode = document.getElementById("closePasscode");
+const passcodeInput = document.getElementById("passcodeInput");
+const submitPasscode = document.getElementById("submitPasscode");
+const passcodeError = document.getElementById("passcodeError");
 const backgroundMusic = document.getElementById("backgroundMusic");
 
 const secretCode = "20062009";
+const extraSecretCode = "forever you";
 const letterParagraphs = Array.from(letterText.querySelectorAll("p")).map((paragraph) => ({
     className: paragraph.className,
     text: paragraph.textContent.replace(/\s+/g, " ").trim()
@@ -168,8 +177,61 @@ async function typeLetter() {
 
     signature.style.opacity = "1";
     signature.style.transform = "translateY(0)";
+    extraMessageWrap.hidden = false;
+    extraMessageWrap.classList.add("visible");
 
 }
+
+
+// ===============================
+// EXTRA SECRET MESSAGE
+// ===============================
+
+function openPasscodeModal() {
+    passcodeModal.classList.remove("hidden");
+    passcodeInput.value = "";
+    passcodeError.textContent = "";
+    setTimeout(() => passcodeInput.focus(), 80);
+}
+
+function closePasscodeModal() {
+    passcodeModal.classList.add("hidden");
+    passcodeInput.value = "";
+    passcodeError.textContent = "";
+}
+
+extraMessageBtn.addEventListener("click", openPasscodeModal);
+closePasscode.addEventListener("click", closePasscodeModal);
+
+passcodeModal.addEventListener("click", (event) => {
+    if (event.target === passcodeModal) {
+        closePasscodeModal();
+    }
+});
+
+submitPasscode.addEventListener("click", () => {
+    const enteredCode = passcodeInput.value;
+
+    if (enteredCode.trim().toLowerCase() !== extraSecretCode.toLowerCase()) {
+        passcodeError.textContent = "Wrong passcode. Try again 💜";
+        passcodeInput.value = "";
+        passcodeInput.focus();
+        return;
+    }
+
+    extraMessageReveal.classList.add("visible");
+    extraMessageBtn.disabled = true;
+    extraMessageBtn.textContent = "Unlocked 💜";
+    extraMessageBtn.style.opacity = "0.75";
+    extraMessageBtn.style.cursor = "default";
+    closePasscodeModal();
+});
+
+passcodeInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        submitPasscode.click();
+    }
+});
 
 
 // ===============================
