@@ -176,12 +176,37 @@
                     Forever yours, 💜
                 </div>
 
+                <div id="extraMessageWrap" class="extra-message-wrap" hidden>
+                    <button id="extraMessageBtn" type="button">Open new message 💌</button>
+                    <div id="extraMessageReveal" class="extra-message-hidden" aria-live="polite">
+                        <p>
+                            Before matapos ang September 12, gusto ko lang sabihin na I’m really grateful to have you, darling. Thank you for always being there for me and for loving me kahit minsan mahirap akong intindihin. I love you so much, myloveee.😘😘😘
+                        </p>
+                    </div>
+                </div>
+
             </div>
 
         </div>
 
     </section>
 
+    <div id="passcodeModal" class="passcode-modal hidden" role="dialog" aria-modal="true" aria-labelledby="passcodeTitle">
+        <div class="passcode-panel">
+            <button id="closePasscode" class="close-passcode" type="button" aria-label="Close passcode popup">×</button>
+            <p class="passcode-kicker">One more little secret...</p>
+            <h3 id="passcodeTitle">Enter passcode</h3>
+            <input
+                id="passcodeInput"
+                type="password"
+                autocomplete="off"
+                placeholder="••••••••"
+                maxlength="20"
+            >
+            <button id="submitPasscode" type="button">Unlock message 💜</button>
+            <p id="passcodeError" class="passcode-error" aria-live="polite"></p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 
