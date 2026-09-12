@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love 💜</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <audio id="backgroundMusic" loop preload="auto">
+        <source src="music/NahanapKita.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Floating background particles -->
+    <div id="particles"></div>
+
+    <!-- INTRO -->
+    <section id="intro" class="screen active">
+        <div class="intro-content">
+            <p class="small-text">A little something for you...</p>
+
+            <h1>Hi myloveee! 💜</h1>
+
+            <div class="heart">♥</div>
+
+            <button id="startBtn">Open it 💌</button>
+        </div>
+    </section>
+
+
+    <!-- QUESTION -->
+    <section id="question" class="screen">
+
+        <div class="question-card">
+
+            <div class="lilac-icon">🪻</div>
+
+            <h2>Do you still love me?</h2>
+
+            <p>Be honest ha... 🥺💜</p>
+
+            <div class="buttons">
+                <button id="yesBtn">YES 💜</button>
+                <button id="noBtn">NO 😭</button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- YES SCREEN -->
+    <section id="celebrate" class="screen">
+
+        <div class="celebrate-content">
+
+            <div class="big-heart">💜</div>
+
+            <h1>YEHEYYYYY!!</h1>
+
+            <p>I knew it! 😭💜</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SECRET CODE -->
+    <section id="code" class="screen">
+
+        <div class="code-card">
+
+            <div class="code-lock">🔐</div>
+
+            <p class="code-eyebrow">One more little secret...</p>
+
+            <h2>Enter our secret code</h2>
+
+            <p class="code-description">Type the code to open your love letter.</p>
+
+            <form id="codeForm" class="code-form">
+                <label class="sr-only" for="codeInput">Secret code</label>
+                <input
+                    id="codeInput"
+                    type="password"
+                    inputmode="numeric"
+                    autocomplete="off"
+                    maxlength="8"
+                    placeholder="••••••••"
+                    required
+                >
+                <button id="codeBtn" type="submit">Unlock letter 💜</button>
+            </form>
+
+            <p id="codeError" class="code-error" role="status" aria-live="polite"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- LOVE LETTER -->
+    <section id="letter" class="screen">
+
+        <div class="letter-container">
+
+            <div class="lilac-decoration">🪻</div>
+
+            <div class="letter-card">
+
+                <div class="letter-header">
+                    <span>💜</span>
+                    <h2>For My Love</h2>
+                    <span>💜</span>
+                </div>
+
+                <div id="letterText" class="letter-text">
+
+                    <p>Hi myloveee! Happy 2nd monthsary to us darling! ❤️</p>
+
+                    <p>
+                        First of all, gusto ko po mag thank you sa’yo darling,
+                        sa pagmamahal mo, sa pag-handle ng ugali ko, sa pagbibigay
+                        mo ng assurance, at sa palagi mong pag-intindi sa akin.
+                        Thank you so much po, darling ko!
+                    </p>
+
+                    <p>
+                        Gusto ko rin po mag sorry dahil minsan nauubos ang pasensya
+                        mo sa pag-intindi sa akin. Sorry darling po kung napaka seloso
+                        at overthinker ko po minsan.
+                    </p>
+
+                    <p>
+                        Darling, sobrang thankful po ako kasi may partner ako na
+                        kayang mag-stay sa akin. Kaya akong mahalin nng walang
+                        pag-aalinlangan. Kaya rin akong bigyan ng assurance,
+                        pahalagahan, at ipagmalaki. Sobrang thankful po ako na
+                        mayroon akong ikaw.
+                    </p>
+
+                    <p>
+                        Thankyousomuch po darling sa trust mopo at sa pagtanggap
+                        mo sa akin nng walang pag-aalinlangan. Sobrang naa-appreciate
+                        ko po lahat ng ginagawa mo para sa akin.
+                    </p>
+
+                    <p>
+                        Darling, sana po huwag ka maghanap ng iba dahil sobrang
+                        takot po akong mawala ka sa akin. Sana po kung may kulang
+                        man sa akin wag mo po sanang hanapin sa iba. Sabihin mo
+                        sa akin at susubukan kong ayusin at ibigay kung ano ang
+                        kailangan mopo.
+                    </p>
+
+                    <p>
+                        Hindi ko napo sasabihin yung mga promise ko, i keep ko nalang
+                        po at ipakita sayo yung action, gagawin kopo best ko always
+                        for you darling
+                    </p>
+
+                    <p>
+                        Happy 2nd monthsary again to us myloveee
+                    </p>
+
+                    <p class="final-love">
+                        I always love you, honeyy. ❤️
+                    </p>
+
+                </div>
+
+                <div class="signature">
+                    Forever yours, 💜
+                </div>
+
+                <div id="extraMessageWrap" class="extra-message-wrap" hidden>
+                    <button id="extraMessageBtn" type="button">Open new message 💌</button>
+                    <div id="extraMessageReveal" class="extra-message-hidden" aria-live="polite">
+                        <p>
+                            Before matapos ang September 12, gusto ko lang sabihin na I’m really grateful to have you, darling. Thank you for always being there for me and for loving me kahit minsan mahirap akong intindihin. I love you so much, myloveee.😘😘😘
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <div id="passcodeModal" class="passcode-modal hidden" role="dialog" aria-modal="true" aria-labelledby="passcodeTitle">
+        <div class="passcode-panel">
+            <button id="closePasscode" class="close-passcode" type="button" aria-label="Close passcode popup">×</button>
+            <p class="passcode-kicker">One more little secret...</p>
+            <h3 id="passcodeTitle">Enter passcode</h3>
+            <input
+                id="passcodeInput"
+                type="password"
+                autocomplete="off"
+                placeholder="••••••••"
+                maxlength="20"
+            >
+            <button id="submitPasscode" type="button">Unlock message 💜</button>
+            <p id="passcodeError" class="passcode-error" aria-live="polite"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
